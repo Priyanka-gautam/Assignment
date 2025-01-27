@@ -24,10 +24,6 @@ transactions = pd.read_csv('/content/Transactions.csv')
 """Data Preprocessing"""
 
 # Merge datasets to create a comprehensive dataset
-#df = pd.merge(transactions, customers, on='CustomerID', how='left')
-#df = pd.merge(df, products, on='ProductID', how='left')
-#print(df)
-# Merge datasets to create a comprehensive dataset
 df = pd.merge(transactions, customers[['CustomerID', 'Region']], on='CustomerID', how='left')
 df = pd.merge(df, products, on='ProductID', how='left')
 print(df)
